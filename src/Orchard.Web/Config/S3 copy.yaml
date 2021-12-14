@@ -1,0 +1,6 @@
+apiVersion: v2
+token: XQMOED0FK1ENBT4UHG3TY5BZL6FH7EGT8YOPSDF9NPSDU0FKT0WEUR0LKG0SDDFT 
+creds:
+  password: kuku123!
+  adminPassword: admin124@
+  db_connection_string: mongo -u idane -p A!b$fH%fs
