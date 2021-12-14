@@ -12,5 +12,6 @@ namespace Orchard.Users.ViewModels
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
         public IContent User { get; set; }
+        public string EmailAddress;
     }
 }
