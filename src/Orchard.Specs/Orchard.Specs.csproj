@@ -11,6 +11,7 @@
     <RootNamespace>Orchard.Specs</RootNamespace>
     <AssemblyName>Orchard.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -41,7 +42,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
     <CodeAnalysisRuleSet>..\OrchardBasicCorrectness.ruleset</CodeAnalysisRuleSet>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
@@ -53,7 +53,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
@@ -199,6 +198,11 @@
       <DependentUpon>Enumeration.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Settings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.feature</DependentUpon>
     </Compile>
     <Compile Include="Text.feature.cs">
       <DependentUpon>Text.feature</DependentUpon>
@@ -372,6 +376,10 @@
       <DependentUpon>HostComponents.config</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Settings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.feature.cs</LastGenOutput>
+    </None>
     <None Include="Text.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Text.feature.cs</LastGenOutput>

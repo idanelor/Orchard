@@ -11,6 +11,7 @@
     <RootNamespace>Orchard</RootNamespace>
     <AssemblyName>Orchard.Framework</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -41,12 +42,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
     <CodeAnalysisRuleSet>..\OrchardBasicCorrectness.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <NoWarn>
-    </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -55,7 +53,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <NoWarn>0436</NoWarn>
@@ -113,9 +110,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -159,6 +154,7 @@
     <Compile Include="ContentManagement\Extensions\DriverResultExtensions.cs" />
     <Compile Include="ContentManagement\Handlers\CloneContentContext.cs" />
     <Compile Include="ContentManagement\IGlobalCriteriaProvider.cs" />
+    <Compile Include="Data\MapAsRecordAttribute.cs" />
     <Compile Include="Data\Migration\Interpreters\PostgreSqlCommandInterpreter.cs" />
     <Compile Include="Data\NoLockInterceptor.cs" />
     <Compile Include="Data\Providers\DefaultNoLockTableProvider.cs" />
@@ -172,6 +168,7 @@
     <Compile Include="Data\Migration\Schema\DropUniqueConstraintCommand.cs" />
     <Compile Include="Environment\Extensions\Models\LifecycleStatus.cs" />
     <Compile Include="Environment\ShellBuilders\ICompositionStrategy.cs" />
+    <Compile Include="FileSystems\Media\InvalidNameCharacterException.cs" />
     <Compile Include="Mvc\ModelBinders\BooleanBinderProvider.cs" />
     <Compile Include="Localization\FormatForScope.cs" />
     <Compile Include="Locking\ILockingProvider.cs" />
@@ -435,7 +432,11 @@
     <Compile Include="Services\Clock.cs" />
     <Compile Include="Services\ClientHostAddressAccessor.cs" />
     <Compile Include="Services\DefaultJsonConverter.cs" />
+    <Compile Include="Services\HtmlFilterContext.cs" />
+    <Compile Include="Services\HtmlFilterProcessor.cs" />
     <Compile Include="Services\IClientHostAddressAccessor.cs" />
+    <Compile Include="Services\HtmlFilter.cs" />
+    <Compile Include="Services\IHtmlFilterProcessor.cs" />
     <Compile Include="Services\IJsonConverter.cs" />
     <Compile Include="Settings\CurrentSiteWorkContext.cs" />
     <Compile Include="Settings\ResourceDebugMode.cs" />
@@ -717,6 +718,7 @@
     <Compile Include="Messaging\Services\IMessageManager.cs" />
     <Compile Include="Messaging\Services\IMessagingChannel.cs" />
     <Compile Include="IWorkContextAccessor.cs" />
+    <Compile Include="Utility\Extensions\NameValueCollectionExtensions.cs" />
     <Compile Include="Utility\Extensions\VirtualPathProviderExtensions.cs" />
     <Compile Include="Utility\NamedReaderWriterLock.cs" />
     <Compile Include="Utility\ReflectionHelper.cs" />
